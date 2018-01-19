@@ -1,0 +1,25 @@
+﻿<Window x:Class="UserInterface.DailyStatistics"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserInterface"
+        mc:Ignorable="d"
+       Title="DailyStatistics" Height="300" Width="350">
+    <Grid x:Name="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DatePicker Name="DatePicker" SelectedDateChanged="DatePicker_OnSelectedDateChanged"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="0" Grid.Row="2">
+            <DataGrid x:Name="DataGrid" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Address" Binding="{Binding Key.Location}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Profit" Binding="{Binding Value}" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
+</Window>
