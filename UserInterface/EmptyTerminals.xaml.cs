@@ -12,7 +12,6 @@ namespace UserInterface
     {
        public EmptyTerminals()
         {
-
             InitializeComponent();
             DataGrid.ItemsSource = new Helper().GetTerminalsWithEmptyItems();
         }
